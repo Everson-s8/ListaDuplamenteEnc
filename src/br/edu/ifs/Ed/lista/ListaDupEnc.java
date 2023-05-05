@@ -11,7 +11,6 @@ public class ListaDupEnc<T extends Comparable<T>> extends Lista<T> {
         NoDup aux = primeiro;
         if (this.tamanho == 0) {
            primeiro = Elemento;
-           anterior = null;
            tamanho++;
         } else {
             ultimo.proximo = Elemento;
@@ -38,13 +37,37 @@ public class ListaDupEnc<T extends Comparable<T>> extends Lista<T> {
 
 
     public T get(int posicao) throws Exception {
-        throw new Exception("Não implementado");
+        if (tamanho == 0){
+            throw new Exception("Lista Vazia");
+        }
+        if (posicao > tamanho | posicao < 0){
+            throw new Exception("A posicao e maior que o tamanho da lista, nao existindo valor nessa posicao");
+        }
+        NoDup aux = this.primeiro;
+        for (int i = 0; i < tamanho ; i++) {
+            if (i == posicao){
+                throw new Exception("O elemento da posicao" + "   " + posicao + "é :" + aux.valor);
+            }else {
+               aux = aux.proximo;
+            }
+        } throw new Exception("Elemento não existe");
 
     }
 
 
     public int getPosElemento(T elemento) throws Exception {
-        throw new Exception("Não implementado");
+        if (tamanho == 0){
+            throw new Exception("Lista Vazia");
+        }
+        NoDup aux = this.primeiro;
+        int cont = 0;
+        while (aux != null){
+            if (elemento == aux.valor){
+                throw new Exception("O elemento está na posicao:" + cont);
+            }
+            aux = aux.proximo;
+            cont++;
+        } throw new Exception("Elemento não existe");
 
     }
 
