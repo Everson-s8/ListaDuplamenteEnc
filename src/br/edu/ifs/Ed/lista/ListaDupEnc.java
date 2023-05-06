@@ -1,16 +1,15 @@
 package br.edu.ifs.Ed.lista;
 
-import java.util.Comparator;
 
-public class ListaDupEnc<T extends Comparable<T>> extends Lista<T> {
+
+public class ListaDupEnc<T extends Comparable<T>> {
     public int tamanho;
     public NoDup<T> primeiro;
     public NoDup<T> ultimo;
-    public NoDup<T> anterior;
+
 
     public void incluir(T elemento) throws Exception {
         NoDup<T> Elemento = new NoDup<>(elemento);
-        NoDup aux = primeiro;
         if (this.tamanho == 0) {
            primeiro = Elemento;
            tamanho++;
@@ -161,6 +160,7 @@ public class ListaDupEnc<T extends Comparable<T>> extends Lista<T> {
             aux = aux.proximo;
         }System.out.printf("Null");
     }
+
 
 }
 

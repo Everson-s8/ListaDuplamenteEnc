@@ -66,6 +66,7 @@ public class Lista<T extends Comparable<T>> {
                         break;
                     }
                     case 10: {
+
                         lista.imprimir();
                         break;
                     }
